@@ -1,0 +1,183 @@
+@use '../scss/' as *;
+
+.lContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: $l-1;
+    z-index: 500;
+    position: relative;
+    &__loading {
+        background-color: $l-2;
+        height: 100vh;
+        width: 70vw;
+        display: flex;
+        gap: 3vw;
+        margin: 0 auto;
+        &--heading {
+            width: 11.5vw;
+            display: flex;
+            flex-direction: column;
+            gap: 10vh;
+            background-color: $l-3;
+            .lLogo {
+                background-color: $l-4;
+                height: 100px;
+                width: 11.5vw;
+            }
+            .lName {
+                height: 90px;
+                background-color: $l-4;
+                border-radius: $lB-border;
+            }
+            .lBanner {
+                height: 50vh;
+                background-color: $l-4;
+            }
+        }
+
+        &--body {
+            background-color: $l-3;
+            width: 33vw;
+            img {
+                height: 95vh;
+                margin-left: -40px;
+            }
+        }
+
+        &--details {
+            position: relative;
+            margin-left: 20px;
+        }
+    }
+    
+/*     &__footer {
+        height: 20%;
+        background-color: #ECE8E1;
+    } */
+}
+
+.lDetails {
+    background-color: $l-3;
+    width: 15vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin-top: 0vh; */
+    border-radius: $lB-border;
+    .lRole {
+        display: flex;
+        flex-direction: column;
+        gap: $lFlex-gap;
+        .lTitle {
+            height: $l-title;
+            width: 30%;
+            background-color: $l-4;
+            border-radius: $l-border;
+        }
+
+        .roleName {
+            height: 45px;
+            width: 80%;
+            background-color: $l-4;
+            border-radius: $l-border;
+        }
+    }
+    .lBio {
+        background-color: $l-3;
+        /* height: 100px; */
+        display: flex;
+        flex-direction: column;
+        gap: $lFlex-gap;
+        position: relative;
+        .lBioTitle {
+            height: $l-title;
+            width: 60%;
+            background-color: $l-4;
+            border-radius: $l-border;
+        }
+        .lBioText {
+            height: 120px;
+            width: 115%;
+            background-color: $l-4;
+            border-radius: $lB-border;
+        }
+    }
+
+    .lAbilities {
+        display: flex;
+        flex-direction: column;
+        gap: $lFlex-gap;
+        .lAbilitiesTitle {
+            height: $l-title;
+            width: 50%;
+            background-color: $l-4;
+            border-radius: $l-border;
+        }
+        .iconsCon {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            .lIcons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .lIcon {
+                    $iSize: 60px;
+                    height: $iSize;
+                    width: 60px;
+                    background-color: $l-4;
+                    border-radius: $lB-border;
+                }
+                .IconName {
+                    height: 20px;
+                    background-color: $l-4;
+                    border-radius: $l-border;
+                }
+            }
+        }
+
+    }
+}
+
+.shimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: loading 1.1s infinite;
+
+    &__animation {
+        width: 50%;
+        height: 100%;
+        background: #b6b5b52d;
+        transform: skewX(-20deg);
+        box-shadow: 0 0 30px 30px rbga(255,255,255,0.05);
+    }
+}
+
+/* .shimmer2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    animation: loading 1.7s infinite;
+
+    &__animation {
+        width: 50%;
+        height: 100%;
+        background: #ece8e1;
+        transform: skewX(-20deg);
+        box-shadow: 0 0 30px 30px rbga(255,255,255,0.05);
+    }
+} */
+
+@keyframes loading {
+    0% { transform: translateX(-150%); }
+    50% { transform: translateX(-60%); }
+    100% { transform: translateX(150%); }
+}

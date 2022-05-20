@@ -1,0 +1,172 @@
+@use '../scss/' as *;
+
+.agentsContainer {
+    color: white;
+    position: relative;
+    video {
+        width: 100vw;
+        height: 80vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .logo {
+        position: absolute;
+        top: -5%;
+        left: 15%;
+        z-index: 20;
+        img {
+            $size: 60%;
+            height: $size;
+            width: $size;
+            object-fit: cover;
+        }
+    }
+}
+
+.agentContainer {
+    display: flex;
+    flex-direction: row;
+    width: $wrapper;
+    margin: 0 auto;
+    position: relative;
+}
+
+//AGENT HEADING
+.agentHeading {
+    width: 20%;
+    position: relative;
+    &__name {
+        position: absolute;
+        top: 21vh;
+        h1 {
+            text-transform: uppercase;
+            font-size: 5rem;
+        }
+    }
+
+    &__banner { 
+        background-color: $gray-bg;
+        position: absolute;
+        bottom: 16%;
+        width: 11.5vw;
+        /* background-image: url('assets/images/background.png'); */
+
+        img {
+            height: 40vh;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+}
+
+//AGENT BODY
+.agentBody {
+    min-width: 60%;
+    img {
+        height: 95vh;
+        margin-left: 5vw;
+    }
+}
+
+//AGENT DETAILS
+.agentDetails {
+    max-width: 20vw;
+    position: relative;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+        margin: 2vh;
+    }
+
+    &__role {
+
+/*         h4 {
+            margin-bottom: -20px;
+        } */
+
+        &--container {
+            display: flex;
+            align-items: center;
+            gap: 5%;
+
+            h1 {
+                font-size: 2.8rem;
+            }
+            img {
+                width: 15%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__bio {
+        p {
+            margin-top: 5px;
+        }
+    }
+
+    &__abilities {
+        p {
+            text-align: center;
+            margin-top: 8px;
+            font-size: .7em;
+        }
+        .abilities {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
+
+        &--container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 10px;
+            gap: 5px;
+            .a-b-icon {
+                width: 50px;
+            }
+            img {
+                width: 40px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            h6 {
+                display: inline;
+            }
+        }
+    }
+    
+    .inGame {
+
+        h6 {
+            margin-bottom: 5px;
+        }
+        .inGame-Con {
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+            margin-top: 1vh;
+        }
+
+        .model-btns {
+            display: flex;
+            gap: 1vw;
+        }
+    }
+}
+
+
+

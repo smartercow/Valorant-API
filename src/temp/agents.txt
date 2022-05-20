@@ -1,0 +1,50 @@
+            <div className="agentBody">
+              <img src={item.fullPortraitV2} alt="" />
+            </div>
+  
+            <div className="agentDetails">
+              <div className="agentDetails__role">
+                <h3>// Role</h3>
+                <div className="agentDetails__role--container">
+                  <h1>{item.role.displayName}</h1>
+                  <img src={item.role.displayIcon} alt="" />
+                </div>
+              </div>
+              <div className="agentDetails__bio">
+                <h3>// Biography</h3>
+                <p>{item.description}</p>
+              </div>
+              <div className="agentDetails__abilities">
+                <h3>// Abilities</h3>
+                <div className="abilities">
+                  {item.abilities.map((ability, index) => (
+                    <div className="agentDetails__abilities--container" key={index}>
+                      <img src={ability.displayIcon} />
+                      <h5>{ability.displayName}</h5>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+                              <Button auto flat color="gray800" onClick={() => soundHandler(item.voiceLine.mediaList[0].id)}>
+                                Game Voice
+                              </Button>
+
+
+
+   let voice;
+
+  function soundHandler(sound) {
+    console.log(sound);
+    voice = new Howl({
+      // src: ['https://media.valorant-api.com/sounds/963067082.wav'],
+      src: [sound],
+      volume: .5
+    });
+  } 
